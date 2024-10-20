@@ -20,4 +20,11 @@ public class GameInput : MonoBehaviour
 
         return inputVector;
     }
+
+    public Vector2 GetRotationVector()
+    {
+        Vector2 inputVector = playerInputActions.Player.Rotate.ReadValue<Vector2>();
+
+        return inputVector;
+    }
 }

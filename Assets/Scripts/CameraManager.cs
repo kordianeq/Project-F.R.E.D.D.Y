@@ -10,11 +10,6 @@ public class CameraManager : MonoBehaviour
     public static void FindCameras()
     {
         cameras.AddRange(GameObject.FindGameObjectsWithTag("Camera"));
-
-        foreach (GameObject cam in cameras)
-        {
-            Debug.Log(cam.name);
-        }
     }
 
     public static void ActivateCamera(GameObject activatedCamera)
