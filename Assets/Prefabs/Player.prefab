@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameInput: {fileID: 0}
   moveSpeed: 0
-  rotateSpeed: 0.5
+  rotateSpeed: 100
 --- !u!143 &2997162263138499597
 CharacterController:
   m_ObjectHideFlags: 0

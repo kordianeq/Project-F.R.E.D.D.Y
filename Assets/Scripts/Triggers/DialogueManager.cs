@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEditor.AnimatedValues;
+using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
 
@@ -19,6 +20,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] public int index;
     bool trueChoice = true;
     [SerializeField] TextMeshProUGUI[] choices;
+    [SerializeField]  Image immg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,16 @@ public class DialogueManager : MonoBehaviour
     {
         if (inDialog)
         {
-            
+            if (immg != null && dialog.showImg)
+            {
+                immg.sprite = dialog.spr;
+                Debug.Log("showingPng");
+                immg.enabled = true;
+            }
+            pPlayer.animator.SetBool("isTurning", false);
+            pPlayer.animator.SetFloat("x", 0f);
+            pPlayer.animator.SetFloat("y", 0f);
+
             pInter.enabled = false;
             pPlayer.enabled = false;
             if (Input.GetKeyDown(KeyCode.Space) && !choosing)
@@ -67,6 +79,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            immg.enabled =false;
             SwitchChoises(0,1);
             pInter.enabled = true;
             pPlayer.enabled = true;

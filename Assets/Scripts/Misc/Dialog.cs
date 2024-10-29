@@ -15,8 +15,8 @@ public class Dialog
     [SerializeField] GameObject noTrigger;
 
     //public bool Choice { get; }
-
-    
+    public Sprite spr;
+    public bool showImg;
 
     public Dialog(string _title, string[] _text, ITrigger _trig)
     {

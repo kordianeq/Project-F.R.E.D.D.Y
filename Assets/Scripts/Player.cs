@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private CharacterController characterController;
-    private Animator animator;
+    public Animator animator;
     [SerializeField] private GameInput gameInput;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotateSpeed = .5f;
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("y", movementVector.y, dampTime, Time.deltaTime);
 
         Vector2 rotateVector = gameInput.GetRotationVector();
-        transform.Rotate(0, rotateVector.x * rotateSpeed, 0);
+        transform.Rotate(0, rotateVector.x * rotateSpeed*Time.deltaTime, 0);
 
         if (rotateVector.x != 0f)
         {
