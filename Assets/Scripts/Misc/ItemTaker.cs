@@ -7,6 +7,7 @@ public class ItemTaker : Task, IInteractable
     [SerializeField] PlayerInteractor inter;
     // Start is called before the first frame update
     [SerializeField]ItemType type;
+    public bool destroyOnFinish;
     void Start()
     {
         inter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteractor>();
@@ -26,6 +27,11 @@ public class ItemTaker : Task, IInteractable
             {
                 Debug.Log("iTEMtAKEN");
                 FinishTask();
+                if(destroyOnFinish)
+                {
+                    inter.ClearInteract(this.gameObject);
+                    Destroy(this.gameObject);
+                }
             }else
             {
                 Debug.Log("Cant take item");

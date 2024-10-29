@@ -22,7 +22,13 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //SwitchChoises(0,1);
         SwitchChoises(0,1);
+            pInter.enabled = true;
+            pPlayer.enabled = true;
+            choosing = false;
+            box.SetActive(false);
+            choiceHolder.SetActive(false);
         //guo.text = text[tIndex];
     }
 

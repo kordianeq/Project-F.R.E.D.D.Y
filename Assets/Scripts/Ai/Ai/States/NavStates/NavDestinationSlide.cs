@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class NavDestinationSlide : Mod_State
 {
+    
     Vector3 navVect = Vector3.zero;
     //public NavMeshAgent nav;
     public float TurnSpeed;

@@ -6,6 +6,8 @@ public class MainTask : MonoBehaviour
 {
     public List<TaskHolder> tList;
     public float taskTime,taskTimer;
+
+    public GameObject triggerAfterAllTasks;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +31,27 @@ public class MainTask : MonoBehaviour
         if(tList.Count<=0)
         {
             Debug.Log("TaskGroupCompleeteee");
+            FinishLevel();
         }
 
+
+    }
+
+    void FinishLevel()
+    {
+
+        ITrigger triggered = null;
+        if (triggerAfterAllTasks != null)
+        {
+            triggerAfterAllTasks.TryGetComponent<ITrigger>(out triggered);
+        }
+        if (triggered != null)
+        { 
+            triggered.Triggered(); 
+           
+        
+        }
+         
 
     }
 }
