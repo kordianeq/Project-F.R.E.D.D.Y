@@ -986,7 +986,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e4da81fba6c8f004e9edca3dfad12bcf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -370.60898
+      value: -370.656
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4da81fba6c8f004e9edca3dfad12bcf,
         type: 3}
@@ -2687,6 +2687,11 @@ PrefabInstance:
       propertyPath: taskC
       value: 
       objectReference: {fileID: 756143112}
+    - target: {fileID: 5829390966935012459, guid: c31132b50895ef84fb912e68e15fc142,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6822569756104518061, guid: c31132b50895ef84fb912e68e15fc142,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6143,37 +6148,37 @@ PrefabInstance:
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.340027
+      value: 28.299988
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.3899994
+      value: 6.8160095
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.1099997
+      value: -9.43
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9466597
+      value: 0.8964966
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.03448944
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.32017168
+      value: 0.44305065
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.011664743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
@@ -6578,7 +6583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _TextureWarpingFactor: 1
   _TextureWarpingMode: 0
-  _VertexGridResolution: 100
+  _VertexGridResolution: 25
   _VertexWobbleMode: 1
   _UseRetroVertexLighting: 1
   _RetroLightingNormalFactor: 1
@@ -8809,7 +8814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1728151950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10049,7 +10054,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.8520216, b: 0.65471697, a: 1}
+  m_Color: {r: 0.9607843, g: 0.7089478, b: 0.2745098, a: 1}
   m_Intensity: 2.49
   m_Range: 10
   m_SpotAngle: 30
@@ -13818,6 +13823,7 @@ GameObject:
   - component: {fileID: 2997162263061654571}
   - component: {fileID: 6971993269837066524}
   - component: {fileID: 6971993269837066525}
+  - component: {fileID: 6971993269837066526}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -13866,6 +13872,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.54, y: 1.51, z: 0.41}
   m_Center: {x: 0, y: 1.01, z: 0}
+--- !u!95 &6971993269837066526
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6971993269837066523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!33 &7054559772788282857
 MeshFilter:
   m_ObjectHideFlags: 0
