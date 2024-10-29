@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotateSpeed = .5f;
     private float dampTime = 0.1f;
+    private float fixedheight;
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        fixedheight = transform.position.y;
     }
 
     private void Update()
@@ -44,5 +46,12 @@ public class Player : MonoBehaviour
 
         moveDirection = transform.TransformDirection(moveDirection);
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+    }
+
+    void LateUpdate()
+    {
+        Vector3 position = transform.position;
+        position.y = fixedheight;
+        transform.position = position;
     }
 }
