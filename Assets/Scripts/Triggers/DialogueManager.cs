@@ -81,6 +81,7 @@ public class DialogueManager : MonoBehaviour
         {
             immg.enabled =false;
             SwitchChoises(0,1);
+            trueChoice = true;
             pInter.enabled = true;
             pPlayer.enabled = true;
             choosing = false;

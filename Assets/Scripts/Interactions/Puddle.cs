@@ -33,7 +33,7 @@ public class Puddle : Task, IInteractable
                 if(interactionTimer<interactionTime)
                 {
                     interactionTimer+=Time.deltaTime;
-                    stain.transform.localScale+= new Vector3(1,0,1)*size*Time.deltaTime;
+                    stain.transform.localScale+= new Vector3(1,1,0)*size*Time.deltaTime;
                 }else
                 {
                     Debug.Log("Finished interaction");
