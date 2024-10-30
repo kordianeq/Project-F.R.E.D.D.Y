@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using JetBrains.Annotations;
-using UnityEditorInternal;
+//using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -68,15 +68,15 @@ public class PlayerInteractor : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (cItem.GetHandItem() != null)
-            {
-                cItem.GetWorldItem().transform.position = gameObject.transform.position;
-                cItem.GetWorldItem().SetActive(true);
-                cItem = null;
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    if (cItem.GetHandItem() != null)
+        //    {
+        //        cItem.GetWorldItem().transform.position = gameObject.transform.position;
+        //        cItem.GetWorldItem().SetActive(true);
+        //        cItem = null;
+        //    }
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
