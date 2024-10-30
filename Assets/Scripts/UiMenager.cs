@@ -4,25 +4,37 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UiMenager : MonoBehaviour
+public class UiMenager : MonoBehaviour,ITrigger
 {
+    public void Triggered()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
+    }
     bool isGamePaused;
     public KeyCode pauseGame = KeyCode.Escape;
-    public GameObject pausePanel;
+    //public GameObject pausePanel;
     // Start is called before the first frame update
     void Start()
     {
-        pausePanel.SetActive(false);
+       // pausePanel.SetActive(false);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
      
-        if(Input.GetKeyDown(pauseGame))
-        {
-            PauseGame();
-        }
+        //if(Input.GetKeyDown(pauseGame)&& isGamePaused == false)
+        //{
+        //    PauseGame();
+        //    isGamePaused = true;
+        //}
+        //if(Input.GetKey(pauseGame)&& isGamePaused == true)
+        //{
+        //    UnpauseGame();
+        //    isGamePaused=false;
+        //}
     }
 
     public void OnChangeScene(int SceneId)
@@ -38,8 +50,9 @@ public class UiMenager : MonoBehaviour
 
    public void PauseGame()
     {
+        Debug.Log("Game Paused");
         isGamePaused = true;
-        pausePanel.SetActive(true);
+        //pausePanel.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
