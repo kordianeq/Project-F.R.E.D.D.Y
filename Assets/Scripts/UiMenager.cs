@@ -4,37 +4,50 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UiMenager : MonoBehaviour,ITrigger
+public class UiMenager : MonoBehaviour
 {
-    public void Triggered()
-    {
-        Application.Quit();
-        Debug.Log("Quit");
-    }
+    public KeyCode pauseGame = KeyCode.P;
     bool isGamePaused;
-    public KeyCode pauseGame = KeyCode.Escape;
-    //public GameObject pausePanel;
-    // Start is called before the first frame update
+
+    public GameObject pausePanel;
+
+  
+
+   
     void Start()
     {
-       // pausePanel.SetActive(false);
-       
+        isGamePaused = false;
+        pausePanel.SetActive(false);
+       if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            UnpauseGame();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-     
-        //if(Input.GetKeyDown(pauseGame)&& isGamePaused == false)
-        //{
-        //    PauseGame();
-        //    isGamePaused = true;
-        //}
-        //if(Input.GetKey(pauseGame)&& isGamePaused == true)
-        //{
-        //    UnpauseGame();
-        //    isGamePaused=false;
-        //}
+
+        if (Input.GetKeyDown(pauseGame) && isGamePaused == false)
+        {
+            Debug.Log("Pasue");
+            PauseGame();
+            isGamePaused = true;
+        }else
+        if (Input.GetKeyDown(pauseGame) && isGamePaused == true)
+        {
+            UnpauseGame();
+            isGamePaused = false;
+        }
+
+        Debug.Log(isGamePaused);
     }
 
     public void OnChangeScene(int SceneId)
@@ -52,7 +65,7 @@ public class UiMenager : MonoBehaviour,ITrigger
     {
         Debug.Log("Game Paused");
         isGamePaused = true;
-        //pausePanel.SetActive(true);
+        pausePanel.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -60,6 +73,8 @@ public class UiMenager : MonoBehaviour,ITrigger
 
     public void UnpauseGame()
     {
+        
+        pausePanel.SetActive(false);
         isGamePaused = false;
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
@@ -72,16 +87,16 @@ public class UiMenager : MonoBehaviour,ITrigger
     }
 
 
-    private void OnLevelWasLoaded(int level)
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    if (SceneManager.GetActiveScene().buildIndex == 0)
+    //    {
+    //        Cursor.lockState = CursorLockMode.None;
+    //        Cursor.visible = true;
+    //    }
+    //    Cursor.lockState = CursorLockMode.Locked;
+    //    Cursor.visible = false;
+    //}
 
 
 
