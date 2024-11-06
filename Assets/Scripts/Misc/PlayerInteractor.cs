@@ -56,13 +56,23 @@ public class PlayerInteractor : MonoBehaviour
             }
             else
             {
+                if (pickeable.Count == 1)
+                {
+                    DropItem();
+                    PickUpItem(pickeable[0]);
+                }
+                else if (pickeable.Count > 1)
+                {
+                    DropItem();
+                    PickUpItem(pickeable[GetClosest(pickeable)]);
+                }
                 if (interacteable.Count == 1)
                 {
                     InteractItem(interacteable[0]);
                 }
                 else if (interacteable.Count > 1)
                 {
-                    PickUpItem(interacteable[GetClosest(pickeable)]);
+                    InteractItem(interacteable[GetClosest(pickeable)]);
                 }
             }
         }

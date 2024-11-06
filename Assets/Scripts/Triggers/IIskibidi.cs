@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemTaker : Task, IInteractable
+public class IIskibidi : Task, ITrigger
 {
     [SerializeField] PlayerInteractor inter;
     // Start is called before the first frame update
-    [SerializeField]ItemType type;
-    public bool destroyOnFinish;
-    public GameObject a,b;
     void Start()
     {
         inter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteractor>();
@@ -19,8 +16,11 @@ public class ItemTaker : Task, IInteractable
     {
         
     }
-
-    public void Interact(PlayerInteractor plInter)
+    public void Triggered()
+    {
+        FinishTask();
+    }
+    /*public void Interact(PlayerInteractor plInter)
     {
         //if(type = )
         Debug.Log("Taking item");
@@ -43,7 +43,7 @@ public class ItemTaker : Task, IInteractable
 
         
         
-    }
+    }*/
 
     /*public void Interact()
     {

@@ -122,6 +122,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1797293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797294}
+  - component: {fileID: 1797295}
+  m_Layer: 0
+  m_Name: SubTak_SKIBIDI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797293}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41.196297, y: 6.0906386, z: 20.353264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1545805389}
+  m_Father: {fileID: 248279991}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1797295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2135afe5bca1c1340a4c2853dc9d8182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerAfterTask: {fileID: 1545805388}
+  mtask: {fileID: 248279992}
+  tasks:
+  - {fileID: 123855236}
 --- !u!4 &13867818 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7333319865408932266, guid: 1606f762fb1721a4eb4f319735b1eeff,
@@ -329,7 +378,7 @@ MonoBehaviour:
     text:
     - Skib... skib... idiskib...
     Choice: 0
-    yesTrigger: {fileID: 0}
+    yesTrigger: {fileID: 123855235}
     noTrigger: {fileID: 0}
     spr: {fileID: 0}
     showImg: 0
@@ -372,6 +421,7 @@ Transform:
   - {fileID: 1186339120}
   - {fileID: 1588927721}
   - {fileID: 1805508779}
+  - {fileID: 123855237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -89.996, z: 0}
 --- !u!1001 &38925446
@@ -1899,6 +1949,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activ: {fileID: 1951129799}
   activate: 0
+--- !u!1 &123855235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123855237}
+  - component: {fileID: 123855236}
+  m_Layer: 0
+  m_Name: Skib
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &123855236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123855235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421fe92dec059b64a9f83761f120ce4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskC: {fileID: 1797295}
+  inter: {fileID: 0}
+--- !u!4 &123855237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123855235}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70708066, z: -0, w: 0.70713294}
+  m_LocalPosition: {x: 36.592873, y: -0.5599171, z: 2.9117157}
+  m_LocalScale: {x: 1, y: 1, z: 0.6069435}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 28521735}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &126567617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 281646411262761544, guid: 9103aae2fb37ecd43a2004dc985c9a64,
@@ -3001,6 +3097,7 @@ Transform:
   - {fileID: 314950205}
   - {fileID: 1843877272}
   - {fileID: 756143111}
+  - {fileID: 1797294}
   - {fileID: 602911525}
   - {fileID: 1783207394}
   m_Father: {fileID: 0}
@@ -4343,6 +4440,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &443699083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8583151623806982594, guid: 9c3b9653d817ebe4aa5c52b775046bab,
+    type: 3}
+  m_PrefabInstance: {fileID: 8547158440854034751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &458076906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6712,6 +6815,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KibelOpeen (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445842539653780132, guid: 615f33b2177adf0459ba0a6bf8177a08,
+        type: 3}
+      propertyPath: oneTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11071,37 +11179,37 @@ PrefabInstance:
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.52301
+      value: 21.16977
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.391205
+      value: 6.680008
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.328999
+      value: 4.681775
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9051043
+      value: -0.46156606
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.14223084
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.42518976
+      value: -0.86660856
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.1253665
       objectReference: {fileID: 0}
     - target: {fileID: 73962688658790453, guid: 0cd5777fb1a22f04e9c55648311d6a55,
         type: 3}
@@ -15665,6 +15773,60 @@ Transform:
   - {fileID: 1240677875}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1545805388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545805389}
+  - component: {fileID: 1545805390}
+  m_Layer: 0
+  m_Name: DialogAfterSKIBIDI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545805389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545805388}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -41.196297, y: -6.0906386, z: -20.353264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1797294}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1545805390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545805388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7ce7e9197c6c149b48301849cbbfb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note:
+    title: 
+    text:
+    - wow skibidi
+    Choice: 0
+    yesTrigger: {fileID: 0}
+    noTrigger: {fileID: 0}
+    spr: {fileID: 0}
+    showImg: 0
+  managerd: {fileID: 0}
 --- !u!1 &1548069566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5877017848097507583, guid: 03254176bc529c44fba1b4cd5de482f5,
@@ -24604,6 +24766,11 @@ PrefabInstance:
       propertyPath: note.Choice
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7657239933310487412, guid: 9c3b9653d817ebe4aa5c52b775046bab,
+        type: 3}
+      propertyPath: note.yesTrigger
+      value: 
+      objectReference: {fileID: 443699083}
     - target: {fileID: 7657239933310487412, guid: 9c3b9653d817ebe4aa5c52b775046bab,
         type: 3}
       propertyPath: note.text.Array.data[0]
