@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
     private float dampTime = 0.1f;
     private float fixedheight;
 
+    private void Awake()
+    {
+        CameraManager.FindCameras();
+    }
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();

@@ -14,8 +14,6 @@ public class CameraManager : MonoBehaviour
 
     public static void ActivateCamera(GameObject activatedCamera)
     {
-        FindCameras();
-
         foreach (GameObject cam in cameras)
         {
             if (cam == activatedCamera)
