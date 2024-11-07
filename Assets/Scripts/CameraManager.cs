@@ -9,6 +9,7 @@ public class CameraManager : MonoBehaviour
 
     public static void FindCameras()
     {
+        cameras.Clear();
         cameras.AddRange(GameObject.FindGameObjectsWithTag("Camera"));
     }
 

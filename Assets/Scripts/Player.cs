@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        CameraManager.FindCameras();
+        //CameraManager.FindCameras();
     }
 
     private void Start()

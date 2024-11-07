@@ -4,26 +4,32 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UiMenager : MonoBehaviour
+public class UiMenager : MonoBehaviour, ITrigger
+
 {
+    public void Triggered()
+    {
+        OnChangeScene(0);
+    }
     public KeyCode pauseGame = KeyCode.P;
     bool isGamePaused;
 
     public GameObject pausePanel;
-
+    int activeSecene;
   
 
    
     void Start()
     {
+        activeSecene = SceneManager.GetActiveScene().buildIndex;
         isGamePaused = false;
         pausePanel.SetActive(false);
-       if(SceneManager.GetActiveScene().buildIndex == 0)
-        {
+       if( activeSecene == 0)
+       {
             UnpauseGame();
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-        }
+       }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -34,20 +40,27 @@ public class UiMenager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (activeSecene != 0)
+        {
+            if (Input.GetKeyDown(pauseGame) && isGamePaused == false)
+            {
+                Debug.Log("Pasue");
+                PauseGame();
+                isGamePaused = true;
+            }
+            else
+            if (Input.GetKeyDown(pauseGame) && isGamePaused == true)
+            {
+                UnpauseGame();
+                isGamePaused = false;
+            }
 
-        if (Input.GetKeyDown(pauseGame) && isGamePaused == false)
-        {
-            Debug.Log("Pasue");
-            PauseGame();
-            isGamePaused = true;
-        }else
-        if (Input.GetKeyDown(pauseGame) && isGamePaused == true)
-        {
-            UnpauseGame();
-            isGamePaused = false;
+            Debug.Log(isGamePaused);
         }
+        else
+        {
 
-        Debug.Log(isGamePaused);
+        }
     }
 
     public void OnChangeScene(int SceneId)
@@ -87,16 +100,25 @@ public class UiMenager : MonoBehaviour
     }
 
 
-    //private void OnLevelWasLoaded(int level)
-    //{
-    //    if (SceneManager.GetActiveScene().buildIndex == 0)
-    //    {
-    //        Cursor.lockState = CursorLockMode.None;
-    //        Cursor.visible = true;
-    //    }
-    //    Cursor.lockState = CursorLockMode.Locked;
-    //    Cursor.visible = false;
-    //}
+    private void OnLevelWasLoaded(int level)
+    {
+        activeSecene = SceneManager.GetActiveScene().buildIndex;
+
+        isGamePaused = false;
+        pausePanel.SetActive(false);
+        if (activeSecene == 0)
+        {
+            UnpauseGame();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            UnpauseGame();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
 
 
 

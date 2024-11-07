@@ -8,6 +8,7 @@ public class GameInput : MonoBehaviour
 
     private void Awake()
     {
+        CameraManager.FindCameras();
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
     }
